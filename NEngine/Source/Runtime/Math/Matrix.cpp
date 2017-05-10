@@ -39,7 +39,7 @@ namespace Newton {
 		return *this;
 	}
 
-	NMatrix NMatrix::Identity() {
+	NMatrix NMatrix::Identity(void) {
 		return NMatrix(1.0f);
 	}
 

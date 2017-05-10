@@ -66,7 +66,7 @@ namespace Newton {
 		 * @return NMatrix: A initialized identity matrix.
 		 *
 		 */
-		static NMatrix Identity();
+		static NMatrix Identity(void);
 
 		/**
 		 * NMatrix Orthographic

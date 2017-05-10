@@ -8,7 +8,7 @@
 #include "File.h"
 
 namespace Newton {
-	void ReadFile(const GLchar* InFilename, const GLuint InBufferSize, GLchar* InBuffer) {
+	void ReadFile(const GLchar* InFilename, GLchar* OutBuffer, GLuint* OutLength) {
 		GLuint Size;
 		FILE* File = fopen(InFilename, "rb");
 
@@ -16,19 +16,17 @@ namespace Newton {
 		fseek(File, 0, SEEK_END);
 		Size = ftell(File);
 
-		// Return If Not Enough Space
-		if (Size >= InBufferSize) {
-			fprintf(stderr, "WARNING: File didn't fit on Buffer\n");
-			InBuffer = nullptr;
-			return;
-		}
+		// Allocate Buffer
+		OutBuffer = new GLchar[Size + 1];
 
 		// Copy Contents to Buffer
 		fseek(File, 0, SEEK_SET);
-		fread(InBuffer, sizeof(GLchar), Size, File);
+		fread(OutBuffer, sizeof(GLchar), Size, File);
 		fclose(File);
 
-		InBuffer[Size] = '\0';
+		if (OutLength)
+			*OutLength = Size;
+		OutBuffer[Size] = '\0';
 		return;
 	}
 }

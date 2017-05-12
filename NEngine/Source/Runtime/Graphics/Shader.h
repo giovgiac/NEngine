@@ -98,7 +98,7 @@ namespace Newton {
 		 *
 		 * This method checks and logs if the compilation of a given shader was successful.
 		 *
-		 * @param const GLuint InID: ...
+		 * @param const GLuint InID: The ID of the shader to check the compilation of.
 		 *
 		 */
 		inline void CheckCompile(const GLuint InID) const;

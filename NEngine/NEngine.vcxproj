@@ -168,7 +168,10 @@
   <ItemGroup>
     <ClInclude Include="Source\Runtime\Collections\Array.h" />
     <ClInclude Include="Source\Runtime\Core\Config.h" />
+    <ClInclude Include="Source\Runtime\Graphics\Camera.h" />
+    <ClInclude Include="Source\Runtime\Graphics\GameObject.h" />
     <ClInclude Include="Source\Runtime\Graphics\Shader.h" />
+    <ClInclude Include="Source\Runtime\Graphics\Texture.h" />
     <ClInclude Include="Source\Runtime\Graphics\Vertex.h" />
     <ClInclude Include="Source\Runtime\Math\Color.h" />
     <ClInclude Include="Source\Runtime\Math\Math.h" />
@@ -194,7 +197,10 @@
     <Library Include="Binaries\ThirdParty\OpenGL\x64\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Runtime\Graphics\Camera.cpp" />
+    <ClCompile Include="Source\Runtime\Graphics\GameObject.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Shader.cpp" />
+    <ClCompile Include="Source\Runtime\Graphics\Texture.cpp" />
     <ClCompile Include="Source\Runtime\Math\Math.cpp" />
     <ClCompile Include="Source\Runtime\Math\Matrix.cpp" />
     <ClCompile Include="Source\Runtime\Utils\File.cpp" />

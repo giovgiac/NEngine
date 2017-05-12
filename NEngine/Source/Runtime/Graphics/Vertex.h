@@ -17,7 +17,7 @@ namespace Newton {
 	 * This data type is understood by the GPU and contains the properties necessary to draw a vertex.
 	 *
 	 */
-	struct Vertex {
+	struct NVertex {
 		NVector Position;
 		NColor Color;
 		NVector TexCoord;

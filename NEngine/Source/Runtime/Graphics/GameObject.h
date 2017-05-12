@@ -21,7 +21,7 @@ namespace Newton {
 	 */
 	class NGameObject {
 	private:
-		NArray<Vertex> Vertices;
+		NArray<NVertex> Vertices;
 
 	protected:
 		NColor Color;
@@ -59,7 +59,7 @@ namespace Newton {
 		 * This method is called once when the game starts.
 		 *
 		 */
-		inline virtual void Start(void) = 0;
+		inline virtual void Start(void);
 
 		/**
 		 * NGameObject Tick
@@ -67,7 +67,7 @@ namespace Newton {
 		 * This method is called every frame.
 		 *
 		 */
-		inline virtual void Tick(void) = 0;
+		inline virtual void Tick(void);
 
 		/**
 		 * NGameObject Translate
@@ -99,6 +99,36 @@ namespace Newton {
 		 */
 		inline void Scale(const NVector& InSize);
 
+		/** 
+		 * NGameObject GetPosition
+		 *
+		 * ...
+		 *
+		 * @return const NVector&: ...
+		 *
+		 */
+		inline const NVector& GetPosition(void) const;
+
+		/**
+		 * NGameObject GetRotation
+		 *
+		 * ...
+		 *
+		 * @return const GLfloat: ...
+		 *
+		 */
+		inline const GLfloat GetRotation(void) const;
+
+		/**
+		 * NGameObject GetSize
+		 *
+		 * ...
+		 *
+		 * @return const NVector&: ...
+		 *
+		 */
+		inline const NVector& GetSize(void) const;
+
 		/**
 		 * NGameObject GetTexture
 		 *
@@ -114,10 +144,10 @@ namespace Newton {
 		 *
 		 * This method gets the vertices of a particular game object.
 		 *
-		 * @return const NArray<Vertex>&: A reference to the array of vertices of the object.
+		 * @return const NArray<NVertex>&: A reference to the array of vertices of the object.
 		 *
 		 */
-		inline const NArray<Vertex>& GetVertices(void) const;
+		inline const NArray<NVertex>& GetVertices(void) const;
 
 	private:
 		/**

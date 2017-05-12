@@ -40,13 +40,11 @@ namespace Newton {
 		 *
 		 * This constructor initializes the camera with the given left, right, bottom and top planes and uses the near and far from the default configuration.
 		 *
-		 * @param const GLfloat InLeft: The value to clip the camera at the left.
 		 * @param const GLfloat InRight: The value to clip the camera at the right.
-		 * @param const GLfloat InBottom: The value to clip the camera at the bottom.
 		 * @param const GLfloat InTop: The value to clip the camera at the top.
 		 *
 		 */
-		explicit inline NCamera(const GLfloat InLeft, const GLfloat InRight, const GLfloat InBottom, const GLfloat InTop);
+		explicit inline NCamera(const GLfloat InRight, const GLfloat InTop);
 
 		/**
 		 * NCamera Constructor

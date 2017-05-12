@@ -32,11 +32,23 @@ namespace Newton {
 		// TODO: Size += InSize
 	}
 
+	const NVector& NGameObject::GetPosition(void) const {
+		return Position;
+	}
+
+	const GLfloat NGameObject::GetRotation(void) const {
+		return Rotation;
+	}
+
+	const NVector& NGameObject::GetSize(void) const {
+		return Size;
+	}
+
 	const NTexture* NGameObject::GetTexture(void) const {
 		return Texture;
 	}
 
-	const NArray<Vertex>& NGameObject::GetVertices(void) const {
+	const NArray<NVertex>& NGameObject::GetVertices(void) const {
 		return Vertices;
 	}
 

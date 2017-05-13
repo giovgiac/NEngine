@@ -15,10 +15,10 @@ namespace Newton {
 	/**
 	 * NWorld
 	 *
-	 * ...
+	 * This class is responsible for creating a world, the entity that renders a scene.
 	 *
 	 */
-	class NWorld {
+	class NWorld sealed {
 	private:
 		NArray<GLuint> Arrays;
 		NArray<GLuint> Buffers;
@@ -29,37 +29,45 @@ namespace Newton {
 		/**
 		 * NWorld Constructor
 		 *
-		 * ...
+		 * This default constructor initializes a new world.
 		 *
 		 */
-		inline NWorld(void);
+		NWorld(void);
 
 		/**
 		 * NWorld Draw
 		 *
-		 * ...
+		 * This method calls upon the renderer to draw the current scene.
 		 *
 		 */
-		inline void Draw(void) const;
+		void Draw(void) const;
 
 		/**
 		 * NWorld LoadScene
 		 *
-		 * ...
+		 * This method loads a new scene into the world and the GPU.
 		 *
-		 * @param const NScene& InScene: ...
+		 * @param NScene& InScene: The scene to load.
 		 *
 		 */
-		inline void LoadScene(const NScene& InScene);
+		void LoadScene(const NScene& InScene);
+
+		/**
+		 * NWorld UnloadScene
+		 *
+		 * This method unloads the previously loaded scene from world and GPU.
+		 *
+		 */
+		void UnloadScene(void);
 
 		/**
 		 * NWorld GetScene
 		 *
-		 * ...
+		 * This method returns the current scene.
 		 *
-		 * @return const NScene&: ...
+		 * @return const NScene&: The current scene.
 		 *
 		 */
-		inline const NScene& GetScene() const;
+		inline const NScene& GetScene() const { return Scene; }
 	};
 }

@@ -13,7 +13,7 @@ namespace Newton {
 	}
 
 	NMatrix::NMatrix(GLfloat InDiagonal) {
-		NMatrix();
+		memset(Elements, 0, 16 * sizeof(GLfloat));
 
 		// Set Main Diagonal Using [Row + Column * 4]
 		Elements[0 + 0 * 4] = InDiagonal;

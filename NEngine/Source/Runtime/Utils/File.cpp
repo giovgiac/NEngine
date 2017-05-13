@@ -8,7 +8,8 @@
 #include "File.h"
 
 namespace Newton {
-	void ReadFile(const GLchar* InFilename, GLchar* OutBuffer, GLuint* OutLength) {
+	GLchar* ReadFile(const GLchar* InFilename, GLuint* OutLength) {
+		GLchar* Buffer;
 		GLuint Size;
 		FILE* File = fopen(InFilename, "rb");
 
@@ -17,16 +18,16 @@ namespace Newton {
 		Size = ftell(File);
 
 		// Allocate Buffer
-		OutBuffer = new GLchar[Size + 1];
+		Buffer = new GLchar[Size + 1];
 
 		// Copy Contents to Buffer
 		fseek(File, 0, SEEK_SET);
-		fread(OutBuffer, sizeof(GLchar), Size, File);
+		fread(Buffer, sizeof(GLchar), Size, File);
 		fclose(File);
 
 		if (OutLength)
 			*OutLength = Size;
-		OutBuffer[Size] = '\0';
-		return;
+		Buffer[Size] = '\0';
+		return Buffer;
 	}
 }

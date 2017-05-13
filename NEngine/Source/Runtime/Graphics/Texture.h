@@ -17,7 +17,7 @@ namespace Newton {
 	 * This class is responsible for creating 2D textures for the game and GPU.
 	 *
 	 */
-	class NTexture {
+	class NTexture sealed {
 	private:
 		GLuint TextureID;
 		GLsizei Width;
@@ -32,7 +32,7 @@ namespace Newton {
 		 * @param const GLchar* InFilename: The path to the image file of the texture.
 		 *
 		 */
-		explicit inline NTexture(const GLchar* InFilename);
+		explicit NTexture(const GLchar* InFilename);
 
 		/**
 		 * NTexture Bind
@@ -40,7 +40,7 @@ namespace Newton {
 		 * This method binds the texture so that it can be used in rendering.
 		 *
 		 */
-		inline void Bind(void) const;
+		void Bind(void) const;
 
 		/**
 		 * NTexture Unbind
@@ -48,7 +48,7 @@ namespace Newton {
 		 * This method unbinds the texture and should be used after rendering.
 		 *
 		 */
-		inline void Unbind(void) const;
+		void Unbind(void) const;
 
 		/**
 		 * NTexture GetWidth
@@ -58,7 +58,7 @@ namespace Newton {
 		 * @return GLsizei: The width of the texture.
 		 *
 		 */
-		inline GLsizei GetWidth(void) const;
+		GLsizei GetWidth(void) const;
 
 		/**
 		 * NTexture GetHeight
@@ -68,7 +68,7 @@ namespace Newton {
 		 * @return GLsizei: The height of the texture.
 		 *
 		 */
-		inline GLsizei GetHeight(void) const;
+		GLsizei GetHeight(void) const;
 
 	private:
 		/**
@@ -79,7 +79,7 @@ namespace Newton {
 		 * @param const GLchar* InFilename: The path to the image file of the texture.
 		 *
 		 */
-		inline void LoadTexture(const GLchar* InFilename);
+		void LoadTexture(const GLchar* InFilename);
 
 		/**
 		 * NTexture ReadImage
@@ -91,6 +91,6 @@ namespace Newton {
 		 * @return const FIBITMAP*: The structure that represents an image loaded by FreeImage.
 		 *
 		 */
-		inline FIBITMAP* ReadImage(const GLchar* InFilename) const;
+		FIBITMAP* ReadImage(const GLchar* InFilename) const;
 	};
 }

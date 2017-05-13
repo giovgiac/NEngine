@@ -18,7 +18,7 @@ namespace Newton {
 	 * This class is responsible for rendering game scenes.
 	 *
 	 */
-	class NRenderer {
+	class NRenderer sealed {
 	private:
 		NShader Shader;
 		GLuint Color;
@@ -35,7 +35,7 @@ namespace Newton {
 		 * This default constructor initializes the renderer with the default shader.
 		 *
 		 */
-		inline NRenderer(void);
+		NRenderer(void);
 
 		/**
 		 * NRenderer Constructor
@@ -45,7 +45,7 @@ namespace Newton {
 		 * @param const NShader& InShader: The shader to use in the renderer.
 		 *
 		 */
-		explicit inline NRenderer(const NShader& InShader);
+		explicit NRenderer(const NShader& InShader);
 
 		/**
 		 * NRenderer Render
@@ -56,7 +56,7 @@ namespace Newton {
 		 * @param const NArray<GLuint>& Arrays: The vertex arrays of the objects.
 		 *
 		 */
-		inline void Render(const NScene& InScene, const NArray<GLuint>& InArrays) const;
+		void Render(const NScene& InScene, const NArray<GLuint>& InArrays) const;
 
 		/**
 		 * NRenderer GetColorID
@@ -66,7 +66,7 @@ namespace Newton {
 		 * @return const GLuint: The ID of the color parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetColorID(void) const;
+		inline const GLuint GetColorID(void) const { return Color; }
 
 		/**
 		 * NRenderer GetModelID
@@ -76,7 +76,7 @@ namespace Newton {
 		 * @return const GLuint: The ID of the model parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetModelID(void) const;
+		inline const GLuint GetModelID(void) const { return Model; }
 
 		/**
 		 * NRenderer GetPositionID
@@ -86,7 +86,7 @@ namespace Newton {
 		 * @return const GLuint: The ID of the position parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetPositionID(void) const;
+		inline const GLuint GetPositionID(void) const { return Position; }
 
 		/**
 		 * NRenderer GetProjectionID
@@ -96,7 +96,7 @@ namespace Newton {
 		 * @return const GLuint: The ID of the projection parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetProjectionID(void) const;
+		inline const GLuint GetProjectionID(void) const { return Projection; }
 
 		/**
 		 * NRenderer GetTextureCoordinateID
@@ -106,7 +106,7 @@ namespace Newton {
 		 * @return const GLuint: The ID of the texture coordinate parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetTextureCoordinateID(void) const;
+		inline const GLuint GetTextureCoordinateID(void) const { return TextureCoordinate; }
 
 		/**
 		 * NRenderer GetViewID
@@ -116,7 +116,7 @@ namespace Newton {
 		 * @return const GLuint: The ID of the view parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetViewID(void) const;
+		inline const GLuint GetViewID(void) const { return View; }
 
 	private:
 		/**
@@ -125,6 +125,6 @@ namespace Newton {
 		 * This method setups the shader by getting all the IDs from the currently set shader.
 		 *
 		 */
-		inline void SetupShader(void);
+		void SetupShader(void);
 	};
 }

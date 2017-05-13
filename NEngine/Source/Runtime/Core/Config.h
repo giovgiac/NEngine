@@ -39,4 +39,24 @@ namespace Newton {
 	 * This configuration sets the default height for the scenes.
 	 */
 	static const GLfloat DefaultSceneHeight = 768.0f;
+
+	/** 
+	 * This configuration sets the default width for windows.
+	 */
+	static const GLsizei DefaultWindowWidth = 1280;
+
+	/**
+	 * This configuration sets the default height for windows.
+	 */
+	static const GLsizei DefaultWindowHeight = 768;
+
+	/**
+	 * This configuration sets the default title for windows.
+	 */
+	static const GLchar* DefaultWindowTitle = "Newton Game";
+
+	/**
+	 * This configuration sets whether the window is fullscreen by default.
+	 */
+	static const GLboolean DefaultWindowFullscreen = false;
 }

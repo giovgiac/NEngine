@@ -26,8 +26,7 @@ namespace Newton {
 		 * The default constructor which initializes the vector to the zero vector.
 		 *
 		 */
-		inline NVector(void)
-			: X(0.0f), Y(0.0f) {}
+		NVector(void);
 
 		/**
 		 * NVector Constructor
@@ -37,8 +36,7 @@ namespace Newton {
 		 * @param GLfloat InF: The value to initialize the components to.
 		 *
 		 */
-		explicit inline NVector(GLfloat InF)
-			: X(InF), Y(InF) {}
+		explicit NVector(const GLfloat InF);
 
 		/**
 		 * NVector Constructor
@@ -49,7 +47,19 @@ namespace Newton {
 		 * @param GLfloat InY: The value of the Y coordinate.
 		 *
 		 */
-		explicit inline NVector(GLfloat InX, GLfloat InY)
-			: X(InX), Y(InY) {}
+		explicit NVector(const GLfloat InX, const GLfloat InY);
+
+		/** 
+		 * NVector Add
+		 *
+		 * This method adds two vectors together, the current one with the given one.
+		 *
+		 * @param const NVector& InOther: The vector add with the current one.
+		 *
+		 */
+		NVector& Add(const NVector& InOther);
+
+		NVector& operator+=(const NVector& InOther);
+		friend NVector operator+(NVector InLeft, const NVector& InRight);
 	};
 }

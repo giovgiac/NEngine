@@ -33,7 +33,7 @@ namespace Newton {
 		 * This default constructor initializes the camera to the default configuration values.
 		 *
 		 */
-		inline NCamera(void);
+		NCamera(void);
 
 		/**
 		 * NCamera Constructor
@@ -44,7 +44,7 @@ namespace Newton {
 		 * @param const GLfloat InTop: The value to clip the camera at the top.
 		 *
 		 */
-		explicit inline NCamera(const GLfloat InRight, const GLfloat InTop);
+		NCamera(const GLfloat InRight, const GLfloat InTop);
 
 		/**
 		 * NCamera Constructor
@@ -59,7 +59,7 @@ namespace Newton {
 		 * @param const GLfloat InFar: The value to clip the camera at the far.
 		 *
 		 */
-		explicit inline NCamera(const GLfloat InLeft, const GLfloat InRight, const GLfloat InBottom, const GLfloat InTop, const GLfloat InNear, const GLfloat InFar);
+		explicit NCamera(const GLfloat InLeft, const GLfloat InRight, const GLfloat InBottom, const GLfloat InTop, const GLfloat InNear, const GLfloat InFar);
 
 		/**
 		 * NCamera SetCamera
@@ -74,7 +74,7 @@ namespace Newton {
 		 * @param const GLfloat InFar: The new value to clip the camera at the far.
 		 *
 		 */
-		inline void SetCamera(const GLfloat InLeft, const GLfloat InRight, const GLfloat InBottom, const GLfloat InTop, const GLfloat InNear, const GLfloat InFar);
+		void SetCamera(const GLfloat InLeft, const GLfloat InRight, const GLfloat InBottom, const GLfloat InTop, const GLfloat InNear, const GLfloat InFar);
 
 		/**
 		 * NCamera GetView
@@ -84,7 +84,7 @@ namespace Newton {
 		 * @return NMatrix: The view matrix of the camera.
 		 *
 		 */
-		inline NMatrix GetView(void) const;
+		inline NMatrix GetView(void) const { return NMatrix::Identity(); }
 
 		/**
 		 * NCamera GetProjection
@@ -94,6 +94,6 @@ namespace Newton {
 		 * @return NMatrix: The projection matrix of the camera.
 		 *
 		 */
-		inline NMatrix GetProjection(void) const;
+		NMatrix GetProjection(void) const { return NMatrix::Orthographic(Left, Right, Bottom, Top, Near, Far); }
 	};
 }

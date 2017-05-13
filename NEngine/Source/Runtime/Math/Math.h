@@ -23,7 +23,7 @@ namespace Newton {
 	 * @return GLfloat: The value of the angle in radians.
 	 *
 	 */
-	inline GLfloat ToRadians(GLfloat InAngle);
+	extern GLfloat ToRadians(GLfloat InAngle);
 
 	/**
 	 * ToDegrees Function
@@ -35,5 +35,5 @@ namespace Newton {
 	 * @return GLfloat: The value of the angle in degrees.
 	 *
 	 */
-	inline GLfloat ToDegrees(GLfloat InAngle);
+	extern GLfloat ToDegrees(GLfloat InAngle);
 }

@@ -25,12 +25,4 @@ namespace Newton {
 		Near = InNear;
 		Far = InFar;
 	}
-
-	NMatrix NCamera::GetView(void) const {
-		return NMatrix::Identity();
-	}
-
-	NMatrix NCamera::GetProjection(void) const {
-		return NMatrix::Orthographic(Left, Right, Bottom, Top, Near, Far);
-	}
 }

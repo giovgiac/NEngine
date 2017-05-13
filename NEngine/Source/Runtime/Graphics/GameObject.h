@@ -37,7 +37,7 @@ namespace Newton {
 		 * This default constructor creates an empty game object.
 		 *
 		 */
-		inline NGameObject(void);
+		NGameObject(void);
 
 		/**
 		 * NGameObject Constructor
@@ -51,7 +51,7 @@ namespace Newton {
 		 * @param NTexture* InTexture: The texture of the object.
 		 *
 		 */
-		explicit inline NGameObject(const NVector& InPosition, const GLfloat InRotation, const NVector& InSize, const NColor& InColor, NTexture* InTexture = nullptr);
+		explicit NGameObject(const NVector& InPosition, const GLfloat InRotation, const NVector& InSize, const NColor& InColor, NTexture* InTexture = nullptr);
 
 		/**
 		 * NGameObject Start
@@ -59,7 +59,7 @@ namespace Newton {
 		 * This method is called once when the game starts.
 		 *
 		 */
-		inline virtual void Start(void);
+		virtual void Start(void);
 
 		/**
 		 * NGameObject Tick
@@ -67,7 +67,7 @@ namespace Newton {
 		 * This method is called every frame.
 		 *
 		 */
-		inline virtual void Tick(void);
+		virtual void Tick(void);
 
 		/**
 		 * NGameObject Translate
@@ -77,7 +77,7 @@ namespace Newton {
 		 * @param const NVector& InTranslation: The amount to translate the object by.
 		 *
 		 */
-		inline void Translate(const NVector& InTranslation);
+		void Translate(const NVector& InTranslation);
 
 		/**
 		 * NGameObject Rotate
@@ -87,7 +87,7 @@ namespace Newton {
 		 * @param const GLfloat InRotation: The angle, in degrees, to rotate the object by.
 		 *
 		 */
-		inline void Rotate(const GLfloat InRotation);
+		void Rotate(const GLfloat InRotation);
 
 		/**
 		 * NGameObject Scale
@@ -97,37 +97,37 @@ namespace Newton {
 		 * @param const NVector& InSize: The amount to scale the object by.
 		 *
 		 */
-		inline void Scale(const NVector& InSize);
+		void Scale(const NVector& InSize);
 
 		/** 
 		 * NGameObject GetPosition
 		 *
-		 * ...
+		 * This method gets the position of the game object.
 		 *
-		 * @return const NVector&: ...
+		 * @return const NVector&: The position of the object.
 		 *
 		 */
-		inline const NVector& GetPosition(void) const;
+		inline const NVector& GetPosition(void) const { return Position; }
 
 		/**
 		 * NGameObject GetRotation
 		 *
-		 * ...
+		 * This method gets the rotation of the game object.
 		 *
-		 * @return const GLfloat: ...
+		 * @return const GLfloat: The rotation of the object.
 		 *
 		 */
-		inline const GLfloat GetRotation(void) const;
+		inline const GLfloat GetRotation(void) const { return Rotation; }
 
 		/**
 		 * NGameObject GetSize
 		 *
-		 * ...
+		 * This method gets the size of the game object.
 		 *
-		 * @return const NVector&: ...
+		 * @return const NVector&: The size of the object.
 		 *
 		 */
-		inline const NVector& GetSize(void) const;
+		inline const NVector& GetSize(void) const { return Size; }
 
 		/**
 		 * NGameObject GetTexture
@@ -137,7 +137,7 @@ namespace Newton {
 		 * @return const NTexture*: A pointer to the texture of the object.
 		 *
 		 */
-		inline const NTexture* GetTexture(void) const;
+		inline NTexture* GetTexture(void) const { return Texture; }
 
 		/**
 		 * NGameObject GetVertices
@@ -147,7 +147,7 @@ namespace Newton {
 		 * @return const NArray<NVertex>&: A reference to the array of vertices of the object.
 		 *
 		 */
-		inline const NArray<NVertex>& GetVertices(void) const;
+		inline const NArray<NVertex>& GetVertices(void) const { return Vertices; }
 
 	private:
 		/**
@@ -158,6 +158,6 @@ namespace Newton {
 		 * @param const NColor& InColor: The color of the vertices.
 		 *
 		 */
-		inline void AddStockVertices(const NColor& InColor);
+		void AddStockVertices(const NColor& InColor);
 	};
 }

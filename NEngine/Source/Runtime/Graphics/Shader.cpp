@@ -16,31 +16,13 @@ namespace Newton {
 		LoadShader(InVertexFilename, InFragmentFilename);
 	}
 
-	void NShader::Bind(void) const {
-		glUseProgram(ShaderID);
-	}
-
-	void NShader::Unbind(void) const {
-		glUseProgram(0);
-	}
-
-	GLint NShader::GetAttributeLocation(const GLchar* InAttribute) const {
-		return glGetAttribLocation(ShaderID, InAttribute);
-	}
-
-	GLint NShader::GetUniformLocation(const GLchar* InUniform) const {
-		return glGetUniformLocation(ShaderID, InUniform);
-	}
-
 	void NShader::LoadShader(const GLchar* InVertexFilename, const GLchar* InFragmentFilename) {
 		GLuint VertexID;
 		GLuint FragmentID;
-		GLchar* Vertex;
-		GLchar* Fragment;
 
 		// Read Shaders from Files
-		ReadFile(InVertexFilename, Vertex);
-		ReadFile(InFragmentFilename, Fragment);
+		GLchar* Vertex = ReadFile(InVertexFilename);
+		GLchar* Fragment = ReadFile(InFragmentFilename);
 
 		// Get Shader IDs from OpenGL
 		ShaderID = glCreateProgram();

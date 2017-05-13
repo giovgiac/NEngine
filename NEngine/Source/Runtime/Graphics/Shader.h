@@ -17,7 +17,7 @@ namespace Newton {
 	 * This class creates a GPU program called a Shader based on GPU programs (Shaders) which are loaded from files.
 	 *
 	 */
-	class NShader {
+	class NShader sealed {
 	private:
 		GLuint ShaderID;
 
@@ -28,7 +28,7 @@ namespace Newton {
 		 * This default constructor loads the default shaders defined in the Engine Configuration file.
 		 *
 		 */
-		inline NShader(void);
+		NShader(void);
 
 		/**
 		 * NShader Constructor
@@ -39,7 +39,7 @@ namespace Newton {
 		 * @param const GLchar* InFragmentFilename: The path to the file containing the fragment shader.
 		 *
 		 */
-		explicit inline NShader(const GLchar* InVertexFilename, const GLchar* InFragmentFilename);
+		explicit NShader(const GLchar* InVertexFilename, const GLchar* InFragmentFilename);
 
 		/**
 		 * NShader Bind
@@ -47,7 +47,7 @@ namespace Newton {
 		 * This method binds the shader so that it can be used during rendering.
 		 *
 		 */
-		inline void Bind(void) const;
+		inline void Bind(void) const { glUseProgram(ShaderID); }
 
 		/**
 		 * NShader Unbind
@@ -55,7 +55,7 @@ namespace Newton {
 		 * This method unbinds the shader and should be called after the rendering finishes.
 		 *
 		 */
-		inline void Unbind(void) const;
+		inline void Unbind(void) const { glUseProgram(0); }
 
 		/**
 		 * NShader GetAttributeLocation
@@ -67,7 +67,7 @@ namespace Newton {
 		 * @return GLint: The index of the attribute.
 		 *
 		 */
-		inline GLint GetAttributeLocation(const GLchar* InAttribute) const;
+		inline GLint GetAttributeLocation(const GLchar* InAttribute) const { return glGetAttribLocation(ShaderID, InAttribute); }
 
 		/**
 		 * NShader GetUniformLocation
@@ -79,7 +79,7 @@ namespace Newton {
 		 * @return GLint: The index of the uniform.
 		 *
 		 */
-		inline GLint GetUniformLocation(const GLchar* InUniform) const;
+		inline GLint GetUniformLocation(const GLchar* InUniform) const { return glGetUniformLocation(ShaderID, InUniform); }
 		
 	private:
 		/**
@@ -91,7 +91,7 @@ namespace Newton {
 		 * @param const GLchar* InFragmentFilename: The path to the file containing the fragment shader.
 		 *
 		 */
-		inline void LoadShader(const GLchar* InVertexFilename, const GLchar* InFragmentFilename);
+		void LoadShader(const GLchar* InVertexFilename, const GLchar* InFragmentFilename);
 
 		/**
 		 * NShader CheckCompile
@@ -101,7 +101,7 @@ namespace Newton {
 		 * @param const GLuint InID: The ID of the shader to check the compilation of.
 		 *
 		 */
-		inline void CheckCompile(const GLuint InID) const;
+		void CheckCompile(const GLuint InID) const;
 
 		/**
 		 * NShader CheckLink
@@ -109,7 +109,7 @@ namespace Newton {
 		 * This method checks and logs if the linking of the program was successful.
 		 *
 		 */
-		inline void CheckLink(void) const;
+		void CheckLink(void) const;
 
 		/**
 		 * NShader CheckValidate
@@ -117,6 +117,6 @@ namespace Newton {
 		 * This method checks and logs if the validation of the program was successful.
 		 *
 		 */
-		inline void CheckValidate(void) const;
+		void CheckValidate(void) const;
 	};
 }

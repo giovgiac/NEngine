@@ -73,28 +73,28 @@
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
-    <ExecutablePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\x64;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
-    <ExecutablePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\x64;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
-    <ExecutablePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\Win32;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
-    <ExecutablePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\Win32;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -168,6 +168,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Runtime\Collections\Array.h" />
     <ClInclude Include="Source\Runtime\Core\Config.h" />
+    <ClInclude Include="Source\Runtime\Core\Game.h" />
     <ClInclude Include="Source\Runtime\Graphics\Camera.h" />
     <ClInclude Include="Source\Runtime\Graphics\GameObject.h" />
     <ClInclude Include="Source\Runtime\Graphics\Renderer.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Source\Runtime\Graphics\Shader.h" />
     <ClInclude Include="Source\Runtime\Graphics\Texture.h" />
     <ClInclude Include="Source\Runtime\Graphics\Vertex.h" />
+    <ClInclude Include="Source\Runtime\Graphics\Window.h" />
     <ClInclude Include="Source\Runtime\Graphics\World.h" />
     <ClInclude Include="Source\Runtime\Math\Color.h" />
     <ClInclude Include="Source\Runtime\Math\Math.h" />
@@ -200,15 +202,19 @@
     <Library Include="Binaries\ThirdParty\OpenGL\x64\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Runtime\Core\Game.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Camera.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\GameObject.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Renderer.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Scene.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Shader.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Texture.cpp" />
+    <ClCompile Include="Source\Runtime\Graphics\Window.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\World.cpp" />
+    <ClCompile Include="Source\Runtime\Main.cpp" />
     <ClCompile Include="Source\Runtime\Math\Math.cpp" />
     <ClCompile Include="Source\Runtime\Math\Matrix.cpp" />
+    <ClCompile Include="Source\Runtime\Math\Vector.cpp" />
     <ClCompile Include="Source\Runtime\Utils\File.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

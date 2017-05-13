@@ -18,7 +18,7 @@ namespace Newton {
 	 * This class is responsible for creating the scenes, also called maps or levels.
 	 *
 	 */
-	class NScene {
+	class NScene sealed {
 	private:
 		NCamera Camera;
 		NArray<NGameObject*> GameObjects;
@@ -31,7 +31,7 @@ namespace Newton {
 		 * This default constructor initializes a scene with default width and height.
 		 *
 		 */
-		inline NScene(void);
+		NScene(void);
 
 		/**
 		 * NScene Constructor
@@ -41,15 +41,7 @@ namespace Newton {
 		 * @param const NVector& InSize: The size of the scene.
 		 *
 		 */
-		explicit inline NScene(const NVector& InSize);
-
-		/**
-		 * NScene Destructor
-		 *
-		 * This destructor cleans up by deleting each individual game object contained in the map.
-		 *
-		 */
-		inline ~NScene(void);
+		explicit NScene(const NVector& InSize);
 
 		/**
 		 * NScene AddObject
@@ -59,7 +51,7 @@ namespace Newton {
 		 * @param NGameObject* InObject: The object to add to the scene.
 		 *
 		 */
-		inline void AddObject(NGameObject* InObject);
+		inline void AddObject(NGameObject* InObject) { GameObjects.Append(InObject); }
 
 		/**
 		 * NScene GetCamera
@@ -69,7 +61,7 @@ namespace Newton {
 		 * @return const NCamera&: A reference to the camera.
 		 *
 		 */
-		inline const NCamera& GetCamera(void) const;
+		inline const NCamera& GetCamera(void) const { return Camera; }
 
 		/**
 		 * NScene GetObjects
@@ -79,6 +71,6 @@ namespace Newton {
 		 * @return const NArray<NGameObject*>&: A reference to the array of game objects.
 		 *
 		 */
-		inline const NArray<NGameObject*>& GetObjects(void) const;
+		inline const NArray<NGameObject*>& GetObjects(void) const { return GameObjects; }
 	};
 }

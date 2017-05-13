@@ -64,30 +64,6 @@ namespace Newton {
 		Shader.Unbind();
 	}
 
-	const GLuint NRenderer::GetColorID(void) const {
-		return Color;
-	}
-
-	const GLuint NRenderer::GetModelID(void) const {
-		return Model;
-	}
-
-	const GLuint NRenderer::GetPositionID(void) const {
-		return Position;
-	}
-
-	const GLuint NRenderer::GetProjectionID(void) const {
-		return Projection;
-	}
-
-	const GLuint NRenderer::GetTextureCoordinateID(void) const {
-		return TextureCoordinate;
-	}
-
-	const GLuint NRenderer::GetViewID(void) const {
-		return View;
-	}
-
 	void NRenderer::SetupShader(void) {
 		Shader.Bind();
 		Position = Shader.GetAttributeLocation("position");

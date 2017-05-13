@@ -16,6 +16,7 @@ namespace Newton {
 	}
 
 	void NWorld::LoadScene(const NScene& InScene) {
+		UnloadScene();
 		GLuint Size = InScene.GetObjects().GetSize();
 
 		// Setup Class Attributes
@@ -46,7 +47,13 @@ namespace Newton {
 		}
 	}
 
-	const NScene& NWorld::GetScene(void) const {
-		return Scene;
+	void NWorld::UnloadScene(void) {
+		if (Scene.GetObjects().GetSize() > 0) {
+			glDeleteVertexArrays(Arrays.GetSize(), Arrays.GetData());
+			glDeleteBuffers(Buffers.GetSize(), Buffers.GetData());
+			
+			for (GLuint i = 0; i < Scene.GetObjects().GetSize(); i++)
+				delete Scene.GetObjects()[i];
+		}
 	}
 }

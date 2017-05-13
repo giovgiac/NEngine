@@ -20,8 +20,12 @@ namespace Newton {
 		AddStockVertices(Color);
 	}
 
+	void NGameObject::Start(void) {}
+
+	void NGameObject::Tick(void) {}
+
 	void NGameObject::Translate(const NVector& InTranslation) {
-		// TODO: Position += InTranslation;
+		Position += InTranslation;
 	}
 
 	void NGameObject::Rotate(const GLfloat InRotation) {
@@ -29,27 +33,7 @@ namespace Newton {
 	}
 
 	void NGameObject::Scale(const NVector& InSize) {
-		// TODO: Size += InSize
-	}
-
-	const NVector& NGameObject::GetPosition(void) const {
-		return Position;
-	}
-
-	const GLfloat NGameObject::GetRotation(void) const {
-		return Rotation;
-	}
-
-	const NVector& NGameObject::GetSize(void) const {
-		return Size;
-	}
-
-	const NTexture* NGameObject::GetTexture(void) const {
-		return Texture;
-	}
-
-	const NArray<NVertex>& NGameObject::GetVertices(void) const {
-		return Vertices;
+		Size += InSize;
 	}
 
 	void NGameObject::AddStockVertices(const NColor& InColor) {

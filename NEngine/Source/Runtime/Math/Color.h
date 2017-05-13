@@ -44,5 +44,21 @@ namespace Newton {
 		 */
 		explicit inline NColor(GLfloat InRed, GLfloat InGreen, GLfloat InBlue, GLfloat InAlpha)
 			: Red(InRed), Green(InGreen), Blue(InBlue), Alpha(InAlpha) {}
+
+		/**
+		 * NColor Black
+		 *
+		 * This static method returns the black color.
+		 *
+		 */
+		static inline NColor Black() { return NColor(0.0f, 0.0f, 0.0f, 0.0f); }
+
+		/** 
+		 * NColor White
+		 *
+		 * This static method returns the white color.
+		 *
+		 */
+		static inline NColor White() { return NColor(1.0f, 1.0f, 1.0f, 1.0f); }
 	};
 }

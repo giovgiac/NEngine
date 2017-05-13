@@ -8,6 +8,7 @@
 #pragma once
 
 #include <glew.h>
+#include <Core/Player.h>
 #include <Graphics/Window.h>
 #include <Graphics/World.h>
 
@@ -20,6 +21,7 @@ namespace Newton {
 	 */
 	class NGame abstract {
 	protected:
+		NPlayer* Player;
 		NWindow* Window;
 		NWorld* World;
 
@@ -72,6 +74,16 @@ namespace Newton {
 		void Play(void);
 
 		/**
+		 * NGame SetPlayer
+		 *
+		 * This method sets the current player to the given value.
+		 *
+		 * @param NPlayer* InPlayer: The player to set to current.
+		 *
+		 */
+		void SetPlayer(NPlayer* InPlayer);
+
+		/**
 		 * NGame GetWorld
 		 *
 		 * This method gets the value of the world of this game.
@@ -79,7 +91,7 @@ namespace Newton {
 		 * @return const NWorld&: A reference to the world.
 		 *
 		 */
-		const NWorld& GetWorld(void) const { return *World; }
+		inline const NWorld& GetWorld(void) const { return *World; }
 
 	private:
 		/**
@@ -90,4 +102,8 @@ namespace Newton {
 		 */
 		void InitializeGL(void) const;
 	};
+
+	static void OnKeyDown(GLFWwindow* InWindow, GLint InKey, GLint InScancode, GLint InAction, GLint InMods);
+	static void OnMouseDown(GLFWwindow* InWindow, GLint InButton, GLint InAction, GLint InMods);
+	static void OnMouseMove(GLFWwindow* InWindow, GLdouble InX, GLdouble InY);
 }

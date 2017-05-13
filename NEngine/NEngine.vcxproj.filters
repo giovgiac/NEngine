@@ -99,6 +99,9 @@
     <ClInclude Include="Source\Runtime\Core\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Binaries\ThirdParty\FreeImage\x64\FreeImage.lib" />
@@ -149,6 +152,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -169,6 +169,7 @@
     <ClInclude Include="Source\Runtime\Collections\Array.h" />
     <ClInclude Include="Source\Runtime\Core\Config.h" />
     <ClInclude Include="Source\Runtime\Core\Game.h" />
+    <ClInclude Include="Source\Runtime\Core\Player.h" />
     <ClInclude Include="Source\Runtime\Graphics\Camera.h" />
     <ClInclude Include="Source\Runtime\Graphics\GameObject.h" />
     <ClInclude Include="Source\Runtime\Graphics\Renderer.h" />
@@ -203,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Core\Game.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Player.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Camera.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\GameObject.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Renderer.cpp" />

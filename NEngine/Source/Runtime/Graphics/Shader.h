@@ -17,7 +17,7 @@ namespace Newton {
 	 * This class creates a GPU program called a Shader based on GPU programs (Shaders) which are loaded from files.
 	 *
 	 */
-	class NShader sealed {
+	class NShader {
 	private:
 		GLuint ShaderID;
 

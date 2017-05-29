@@ -19,10 +19,9 @@ using namespace Newton;
 class MyPlayer : public NPlayer {
 public:
 	MyPlayer(const NVector& InPosition, const GLfloat InRotation, const NVector& InSize, NTexture* InTexture)
-		: NPlayer(InPosition, InRotation, InSize, NColor::White(), InTexture) {}
+		: NPlayer(InPosition, InRotation, InSize, Colors::White, InTexture) {}
 
-	virtual void OnKeyDown(GLint InKey, GLint InScancode, GLint InAction, GLint InMods) override {
-		// Handle Input for Movement and Game Exit
+	virtual void OnKeyDown(NWindow* Window, GLint InKey, GLint InScancode, GLint InAction, GLint InMods) {
 		if (InKey == GLFW_KEY_W && (InAction == GLFW_PRESS || InAction == GLFW_REPEAT))
 			Translate(NVector(0.0f, 2.0f));
 		else if (InKey == GLFW_KEY_S && (InAction == GLFW_PRESS || InAction == GLFW_REPEAT))
@@ -32,11 +31,8 @@ public:
 		else if (InKey == GLFW_KEY_D && (InAction == GLFW_PRESS || InAction == GLFW_REPEAT))
 			Translate(NVector(2.0f, 0.0f));
 		else if (InKey == GLFW_KEY_ESCAPE && InAction == GLFW_PRESS)
-			exit(EXIT_SUCCESS);
+			Window->Destroy();
 	}
-
-	virtual void OnMouseDown(GLint InButton, GLint InAction, GLint InMods) override {}
-	virtual void OnMouseMove(GLdouble InX, GLdouble InY) override {}
 };
 
 class MyGame : public NGame {
@@ -45,12 +41,20 @@ public:
 		: NGame() {}
 
 	void BeforePlay(void) override {
+		NAudioSource* Audio;
 		NScene Scene;
+
+		// Test Audio
+		Audio = new NAudioSource("sound.mp3", false);
+		Audio->Play();
 		
 		// Create Objects
 		NTexture* GokuTexture = new NTexture("goku.png");
-		NPlayer* NewPlayer = new MyPlayer(NVector(640.0f, 384.0f), 0.0f, NVector(50.f, 50.f), GokuTexture);
-		NGameObject* Object0 = new NGameObject(NVector(320.0f, 192.0f), 0.0f, NVector(50.0f, 50.0f), NColor(), GokuTexture);
+		NGameObject* Object0 = new NGameObject(NVector(320.0f, 192.0f), 0.0f, NVector(50.0f, 50.0f), Colors::White, GokuTexture);
+		MyPlayer* NewPlayer = new MyPlayer(NVector(640.0f, 384.0f), 0.0f, NVector(50.f, 50.f), GokuTexture);
+
+		// Set KeyDown Event
+		OnKeyDown = new NEventHandler<NWindow*, GLint, GLint, GLint, GLint>(NewPlayer, &MyPlayer::OnKeyDown);
 
 		// Add Objects to Scene
 		SetPlayer(NewPlayer);

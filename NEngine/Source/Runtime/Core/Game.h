@@ -7,7 +7,8 @@
 
 #pragma once
 
-#include <glew.h>
+#include <Audio/Source.h>
+#include <Core/Event.h>
 #include <Core/Player.h>
 #include <Graphics/Window.h>
 #include <Graphics/World.h>
@@ -24,6 +25,11 @@ namespace Newton {
 		NPlayer* Player;
 		NWindow* Window;
 		NWorld* World;
+
+	public:
+		NEventHandler<NWindow*, GLint, GLint, GLint, GLint>* OnKeyDown;
+		NEventHandler<NWindow*, GLint, GLint, GLint>* OnMouseDown;
+		NEventHandler<NWindow*, GLdouble, GLdouble>* OnMouseMove;
 
 	public:
 		/**
@@ -58,6 +64,14 @@ namespace Newton {
 		explicit NGame(const GLsizei InWidth, const GLsizei InHeight, const GLchar* InTitle, const GLboolean InFullscreen);
 
 		/**
+		 * NGame Destructor
+		 *
+		 * This method destroys the game by cleaning up memory.
+		 *
+		 */
+		~NGame(void);
+
+		/**
 		 * NGame BeforePlay
 		 *
 		 * This method is called immediately before play and the beginning of the main engine loop.
@@ -84,6 +98,16 @@ namespace Newton {
 		void SetPlayer(NPlayer* InPlayer);
 
 		/**
+		 * NGame GetWindow
+		 *
+		 * This method gets a pointer to the window of this game.
+		 *
+		 * @return const NWindow*: A pointer to the window.
+		 *
+		 */
+		inline NWindow* GetWindow(void) const { return Window; }
+
+		/**
 		 * NGame GetWorld
 		 *
 		 * This method gets the value of the world of this game.
@@ -95,6 +119,14 @@ namespace Newton {
 
 	private:
 		/**
+		 * NGame InitializeFMOD
+		 *
+		 * This method initializes FMOD through it's library.
+		 *
+		 */
+		void InitializeFMOD(void) const;
+
+		/**
 		 * NGame InitializeGL
 		 *
 		 * This method initializes OpenGL through the libraries GLFW and GLEW.
@@ -102,8 +134,4 @@ namespace Newton {
 		 */
 		void InitializeGL(void) const;
 	};
-
-	static void OnKeyDown(GLFWwindow* InWindow, GLint InKey, GLint InScancode, GLint InAction, GLint InMods);
-	static void OnMouseDown(GLFWwindow* InWindow, GLint InButton, GLint InAction, GLint InMods);
-	static void OnMouseMove(GLFWwindow* InWindow, GLdouble InX, GLdouble InY);
 }

@@ -18,7 +18,7 @@ namespace Newton {
 	 * This class is responsible for creating the scenes, also called maps or levels.
 	 *
 	 */
-	class NScene sealed {
+	class NScene {
 	private:
 		NCamera Camera;
 		NArray<NGameObject*> GameObjects;

@@ -18,7 +18,7 @@ namespace Newton {
 	 * This class is responsible for rendering game scenes.
 	 *
 	 */
-	class NRenderer sealed {
+	class NRenderer {
 	private:
 		NShader Shader;
 		GLuint Color;

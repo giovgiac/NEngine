@@ -255,3 +255,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/NEngine/sound.mp3

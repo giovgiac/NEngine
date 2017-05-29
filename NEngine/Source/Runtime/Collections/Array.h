@@ -61,10 +61,10 @@ namespace Newton {
 			memcpy(NewData, Data, Size * sizeof(ElementType));
 			NewData[Size] = InEntry;
 			Size++;
-			delete Data;
+			delete[] Data;
 			Data = NewData;
 		}
-
+		
 		/**
 		 * NArray GetData
 		 *

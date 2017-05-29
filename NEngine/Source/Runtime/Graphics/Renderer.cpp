@@ -53,8 +53,8 @@ namespace Newton {
 			glUniformMatrix4fv(Model, 1, GL_FALSE, ModelMatrix.Elements);
 			glUniformMatrix4fv(View, 1, GL_FALSE, ViewMatrix.Elements);
 			glUniformMatrix4fv(Projection, 1, GL_FALSE, ProjMatrix.Elements);
-
-			glDrawArrays(GL_TRIANGLES, 0, GameObjects[i]->GetVertices().GetSize());
+			
+			glDrawArrays(GL_QUADS, 0, GameObjects[i]->GetVertices().GetSize());
 
 			if (GameObjects[i]->GetTexture())
 				GameObjects[i]->GetTexture()->Unbind();

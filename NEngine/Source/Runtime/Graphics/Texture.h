@@ -17,7 +17,7 @@ namespace Newton {
 	 * This class is responsible for creating 2D textures for the game and GPU.
 	 *
 	 */
-	class NTexture sealed {
+	class NTexture {
 	private:
 		GLuint TextureID;
 		GLsizei Width;

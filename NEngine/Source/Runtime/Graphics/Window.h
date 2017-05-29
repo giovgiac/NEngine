@@ -19,7 +19,7 @@ namespace Newton {
 	 * This class is responsible for creating windows using the GLFW library.
 	 *
 	 */
-	class NWindow sealed {
+	class NWindow {
 	private:
 		GLFWwindow* Window;
 		GLsizei Width;
@@ -95,6 +95,16 @@ namespace Newton {
 		inline void SetMouseButtonCallback(GLFWmousebuttonfun InCallback) const { glfwSetMouseButtonCallback(Window, InCallback); }
 
 		/**
+		 * NWindow SetWindowUserPointer
+		 *
+		 * This method sets a pointer for data in the GLFWwindow.
+		 *
+		 * @param void* InData: A pointer to the data to store in the window.
+		 *
+		 */
+		inline void SetWindowUserPointer(void* InData) const { glfwSetWindowUserPointer(Window, InData); }
+
+		/**
 		 * NWindow SwapBuffers
 		 *
 		 * This method swaps the buffers in OpenGL.
@@ -139,5 +149,15 @@ namespace Newton {
 		 *
 		 */
 		inline GLsizei GetHeight(void) const { return Height; }
+
+		/**
+		 * NWindow GetWindowUserPointer
+		 *
+		 * This method gets the data stored in the GLFWwindow.
+		 *
+		 * @return void*: A pointer to the data stored in the window.
+		 *
+		 */
+		inline void* GetWindowUserPointer(void) const { return glfwGetWindowUserPointer(Window); }
 	};
 }

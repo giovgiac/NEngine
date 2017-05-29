@@ -40,8 +40,6 @@ namespace Newton {
 		Vertices[0] = { NVector(-1.0f,  1.0f), InColor, NVector(0.0f, 1.0f) };
 		Vertices[1] = { NVector(-1.0f, -1.0f), InColor, NVector(0.0f, 0.0f) };
 		Vertices[2] = { NVector( 1.0f, -1.0f), InColor, NVector(1.0f, 0.0f) };
-		Vertices[3] = { NVector(-1.0f,  1.0f), InColor, NVector(0.0f, 1.0f) };
-		Vertices[4] = { NVector( 1.0f, -1.0f), InColor, NVector(1.0f, 0.0f) };
-		Vertices[5] = { NVector( 1.0f,  1.0f), InColor, NVector(1.0f, 1.0f) };
+		Vertices[3] = { NVector( 1.0f,  1.0f), InColor, NVector(1.0f, 1.0f) };
 	}
 }

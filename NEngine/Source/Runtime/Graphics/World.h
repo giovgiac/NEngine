@@ -18,7 +18,7 @@ namespace Newton {
 	 * This class is responsible for creating a world, the entity that renders a scene.
 	 *
 	 */
-	class NWorld sealed {
+	class NWorld {
 	private:
 		NArray<GLuint> Arrays;
 		NArray<GLuint> Buffers;

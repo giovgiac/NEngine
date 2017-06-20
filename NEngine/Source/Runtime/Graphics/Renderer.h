@@ -22,11 +22,9 @@ namespace Newton {
 	private:
 		NShader Shader;
 		GLuint Color;
-		GLuint Model;
 		GLuint Position;
-		GLuint Projection;
 		GLuint TextureCoordinate;
-		GLuint View;
+		GLuint Transform;
 
 	public:
 		/**
@@ -69,16 +67,6 @@ namespace Newton {
 		inline const GLuint GetColorID(void) const { return Color; }
 
 		/**
-		 * NRenderer GetModelID
-		 *
-		 * This method gets the ID of the model parameter from the shaders.
-		 *
-		 * @return const GLuint: The ID of the model parameter in the shader.
-		 *
-		 */
-		inline const GLuint GetModelID(void) const { return Model; }
-
-		/**
 		 * NRenderer GetPositionID
 		 *
 		 * This method gets the ID of the position parameter from the shaders.
@@ -87,16 +75,6 @@ namespace Newton {
 		 *
 		 */
 		inline const GLuint GetPositionID(void) const { return Position; }
-
-		/**
-		 * NRenderer GetProjectionID
-		 *
-		 * This method gets the ID of the projection parameter from the shaders.
-		 *
-		 * @return const GLuint: The ID of the projection parameter in the shader.
-		 *
-		 */
-		inline const GLuint GetProjectionID(void) const { return Projection; }
 
 		/**
 		 * NRenderer GetTextureCoordinateID
@@ -109,15 +87,14 @@ namespace Newton {
 		inline const GLuint GetTextureCoordinateID(void) const { return TextureCoordinate; }
 
 		/**
-		 * NRenderer GetViewID
+		 * NRenderer GetTransformID
 		 *
-		 * This method gets the ID of the view parameter from the shaders.
+		 * This method gets the ID of the transform parameter from the shaders.
 		 *
-		 * @return const GLuint: The ID of the view parameter in the shader.
+		 * @return const GLuint: The ID of the transform parameter in the shader.
 		 *
 		 */
-		inline const GLuint GetViewID(void) const { return View; }
-
+		inline const GLuint GetTransformID(void) const { return Transform; }
 	private:
 		/**
 		 * NRenderer SetupShader

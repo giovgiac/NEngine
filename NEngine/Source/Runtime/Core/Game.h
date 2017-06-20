@@ -20,7 +20,7 @@ namespace Newton {
 	 * This class is meant to be inherited from and to create the game using NEngine.
 	 *
 	 */
-	class NGame abstract {
+	class NGame {
 	protected:
 		NPlayer* Player;
 		NWindow* Window;

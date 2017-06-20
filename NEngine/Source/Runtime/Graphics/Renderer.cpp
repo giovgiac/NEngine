@@ -35,8 +35,8 @@ namespace Newton {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// Set Default View and Projection
-		NMatrix ViewMatrix = Camera.GetView();
-		NMatrix ProjMatrix = Camera.GetProjection();
+		NMatrix View = Camera.GetView();
+		NMatrix Projection = Camera.GetProjection();
 
 		Shader.Bind();
 		for (GLuint i = 0; i < GameObjects.GetSize(); i++) {
@@ -48,12 +48,11 @@ namespace Newton {
 			NMatrix Translate = NMatrix::Translation(NVector3(GameObjects[i]->GetPosition().X, GameObjects[i]->GetPosition().Y, 0.0f));
 			NMatrix Rotate = NMatrix::Rotation(GameObjects[i]->GetRotation(), NVector3(0.0f, 0.0f, 1.0f));
 			NMatrix Scale = NMatrix::Scale(NVector3(GameObjects[i]->GetSize().X, GameObjects[i]->GetSize().Y, 1.0f));
-			NMatrix ModelMatrix = Translate * Rotate * Scale;
+			NMatrix World = Translate * Rotate * Scale;
 
-			glUniformMatrix4fv(Model, 1, GL_FALSE, ModelMatrix.Elements);
-			glUniformMatrix4fv(View, 1, GL_FALSE, ViewMatrix.Elements);
-			glUniformMatrix4fv(Projection, 1, GL_FALSE, ProjMatrix.Elements);
-			
+			NMatrix TransformMatrix = Projection * View * World;
+
+			glUniformMatrix4fv(Transform, 1, GL_FALSE, TransformMatrix.Elements);
 			glDrawArrays(GL_QUADS, 0, GameObjects[i]->GetVertices().GetSize());
 
 			if (GameObjects[i]->GetTexture())
@@ -69,9 +68,7 @@ namespace Newton {
 		Position = Shader.GetAttributeLocation("position");
 		Color = Shader.GetAttributeLocation("color");
 		TextureCoordinate = Shader.GetAttributeLocation("textureCoordinate");
-		Model = Shader.GetUniformLocation("model");
-		View = Shader.GetUniformLocation("view");
-		Projection = Shader.GetUniformLocation("projection");
+		Transform = Shader.GetUniformLocation("transform");
 		Shader.Unbind();
 	}
 }

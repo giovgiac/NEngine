@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{2F3ABCB9-9F27-47B6-915A-6F3074FA7261}</ProjectGuid>
     <RootNamespace>NEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -72,30 +72,30 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FMOD;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Source\Runtime;$(SolutionDir)\Source\ThirdParty\FMOD;$(SolutionDir)\Source\ThirdParty\FreeImage;$(SolutionDir)\Source\ThirdParty\OpenGL\GL;$(SolutionDir)\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FMOD\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\Binaries\ThirdParty\OpenGL\x64;$(SolutionDir)\Binaries\ThirdParty\FreeImage\x64;$(SolutionDir)\Binaries\ThirdParty\FMOD\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FMOD;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Source\Runtime;$(SolutionDir)\Source\ThirdParty\FMOD;$(SolutionDir)\Source\ThirdParty\FreeImage;$(SolutionDir)\Source\ThirdParty\OpenGL\GL;$(SolutionDir)\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\x64;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FMOD\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\Binaries\ThirdParty\OpenGL\x64;$(SolutionDir)\Binaries\ThirdParty\FreeImage\x64;$(SolutionDir)\Binaries\ThirdParty\FMOD\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FMOD;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Source\Runtime;$(SolutionDir)\Source\ThirdParty\FMOD;$(SolutionDir)\Source\ThirdParty\FreeImage;$(SolutionDir)\Source\ThirdParty\OpenGL\GL;$(SolutionDir)\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FMOD\Win32;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\Binaries\ThirdParty\OpenGL\Win32;$(SolutionDir)\Binaries\ThirdParty\FreeImage\Win32;$(SolutionDir)\Binaries\ThirdParty\FMOD\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\Binaries\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\Runtime;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FMOD;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\FreeImage;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GL;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Source\Runtime;$(SolutionDir)\Source\ThirdParty\FMOD;$(SolutionDir)\Source\ThirdParty\FreeImage;$(SolutionDir)\Source\ThirdParty\OpenGL\GL;$(SolutionDir)\Source\ThirdParty\OpenGL\GLFW;$(IncludePath)</IncludePath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <LibraryPath>C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\OpenGL\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FreeImage\Win32;C:\Users\Giovanni\Source\Repos\NEngine\NEngine\Binaries\ThirdParty\FMOD\Win32;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\Binaries\ThirdParty\OpenGL\Win32;$(SolutionDir)\Binaries\ThirdParty\FreeImage\Win32;$(SolutionDir)\Binaries\ThirdParty\FMOD\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -267,6 +267,7 @@
     <Library Include="Binaries\ThirdParty\OpenGL\x64\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Runtime\Main.cpp" />
     <ClCompile Include="Source\Runtime\Audio\Source.cpp" />
     <ClCompile Include="Source\Runtime\Core\Game.cpp" />
     <ClCompile Include="Source\Runtime\Core\Player.cpp" />

@@ -224,6 +224,7 @@
     <ClInclude Include="Source\Runtime\Core\Event.h" />
     <ClInclude Include="Source\Runtime\Core\Game.h" />
     <ClInclude Include="Source\Runtime\Core\Player.h" />
+    <ClInclude Include="Source\Runtime\Core\Timer.h" />
     <ClInclude Include="Source\Runtime\Graphics\Camera.h" />
     <ClInclude Include="Source\Runtime\Graphics\GameObject.h" />
     <ClInclude Include="Source\Runtime\Graphics\Renderer.h" />
@@ -267,6 +268,7 @@
     <Library Include="Binaries\ThirdParty\OpenGL\x64\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Runtime\Core\Timer.cpp" />
     <ClCompile Include="Source\Runtime\Main.cpp" />
     <ClCompile Include="Source\Runtime\Audio\Source.cpp" />
     <ClCompile Include="Source\Runtime\Core\Game.cpp" />

@@ -36,6 +36,9 @@ namespace Newton {
 		InitializeFMOD();
 		InitializeGL();
 
+		// Create Timer
+		Timer = new NTimer();
+
 		// Create Window and World
 		Window = new NWindow(DefaultWindowWidth, DefaultWindowHeight, DefaultWindowTitle, DefaultWindowFullscreen);
 		World = new NWorld();
@@ -53,6 +56,9 @@ namespace Newton {
 		InitializeFMOD();
 		InitializeGL();
 
+		// Create Timer
+		Timer = new NTimer();
+
 		// Create Window and World
 		Window = new NWindow(DefaultWindowWidth, DefaultWindowHeight, InTitle, DefaultWindowFullscreen);
 		World = new NWorld();
@@ -69,6 +75,9 @@ namespace Newton {
 	NGame::NGame(const GLsizei InWidth, const GLsizei InHeight, const GLchar* InTitle, const GLboolean InFullscreen) {
 		InitializeFMOD();
 		InitializeGL();
+
+		// Create Timer
+		Timer = new NTimer();
 
 		// Create Window and World
 		Window = new NWindow(InWidth, InHeight, InTitle, InFullscreen);
@@ -94,6 +103,10 @@ namespace Newton {
 		if (OnMouseMove)
 			delete OnMouseMove;
 
+		// Delete Timer and World
+		delete Timer;
+		delete World;
+
 		// Terminate GLFW
 		glfwTerminate();
 
@@ -107,12 +120,16 @@ namespace Newton {
 		for (GLuint i = 0; i < World->GetScene().GetObjects().GetSize(); i++)
 			World->GetScene().GetObjects()[i]->Start();
 
+		// Reset Timer
+		Timer->Reset();
+
 		// Main Engine Loop
 		while (!Window->ShouldClose()) {
 			Window->UpdateViewport();
 			World->Draw();
+			Timer->Tick();
 			for (GLuint i = 0; i < World->GetScene().GetObjects().GetSize(); i++)
-				World->GetScene().GetObjects()[i]->Tick();
+				World->GetScene().GetObjects()[i]->Tick(Timer->GetDeltaTime());
 			Window->SwapBuffers();
 			Window->PollEvents();
 			FMOD_System_Update(FMODSystem);

@@ -66,8 +66,10 @@ namespace Newton {
 		 *
 		 * This method is called every frame.
 		 *
+		 * @param GLfloat DeltaTime: The difference, in seconds, between frames.
+		 *
 		 */
-		virtual void Tick(void);
+		virtual void Tick(GLfloat DeltaTime);
 
 		/**
 		 * NGameObject Translate

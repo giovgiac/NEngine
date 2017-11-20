@@ -10,6 +10,7 @@
 #include <Audio/Source.h>
 #include <Core/Event.h>
 #include <Core/Player.h>
+#include <Core/Timer.h>
 #include <Graphics/Window.h>
 #include <Graphics/World.h>
 
@@ -23,6 +24,7 @@ namespace Newton {
 	class NGame {
 	protected:
 		NPlayer* Player;
+		NTimer* Timer;
 		NWindow* Window;
 		NWorld* World;
 

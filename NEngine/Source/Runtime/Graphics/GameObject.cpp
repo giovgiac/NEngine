@@ -5,6 +5,8 @@
  *
  */
 
+#include <stdio.h>
+
 #include "GameObject.h"
 
 namespace Newton {
@@ -22,7 +24,7 @@ namespace Newton {
 
 	void NGameObject::Start(void) {}
 
-	void NGameObject::Tick(void) {}
+	void NGameObject::Tick(GLfloat DeltaTime) {}
 
 	void NGameObject::Translate(const NVector& InTranslation) {
 		Position += InTranslation;

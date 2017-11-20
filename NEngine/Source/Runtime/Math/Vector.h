@@ -56,10 +56,28 @@ namespace Newton {
 		 *
 		 * @param const NVector& InOther: The vector add with the current one.
 		 *
+		 * @return NVector&: A reference to self.
+		 *
 		 */
 		NVector& Add(const NVector& InOther);
 
+		/**
+		 * NVector Multiply
+		 *
+		 * This method multiplies a vector and a scalar.
+		 *
+		 * @param const GLfloat InScalar: The scalar to multiply the vector by.
+		 *
+		 * @return NVector&: A reference to self.
+		 *
+		 */
+		NVector& Multiply(const GLfloat InScalar);
+
+
 		NVector& operator+=(const NVector& InOther);
+		NVector& operator*=(const GLfloat InScalar);
+
 		friend NVector operator+(NVector InLeft, const NVector& InRight);
+		friend NVector operator*(NVector InVector, const GLfloat InScalar);
 	};
 }

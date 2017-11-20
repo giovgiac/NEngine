@@ -24,6 +24,16 @@ namespace Newton {
 		return *this;
 	}
 
+	NVector& NVector::Multiply(const GLfloat InScalar) {
+		X *= InScalar;
+		Y *= InScalar;
+
+		return *this;
+	}
+
 	NVector& NVector::operator+=(const NVector& InOther) { return Add(InOther); }
+	NVector& NVector::operator*=(const GLfloat InScalar) { return Multiply(InScalar); }
+
 	NVector operator+(NVector InLeft, const NVector& InRight) { return InLeft.Add(InRight); }
+	NVector operator*(NVector InVector, const GLfloat InScalar) { return InVector.Multiply(InScalar); }
 }

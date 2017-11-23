@@ -33,12 +33,12 @@ namespace Newton {
 	/**
 	 * This configuration sets the default width for the scenes.
 	 */
-	static const GLfloat DefaultSceneWidth = 1280.0f;
+	static const GLfloat DefaultSceneWidth = 160.0f;
 
 	/**
 	 * This configuration sets the default height for the scenes.
 	 */
-	static const GLfloat DefaultSceneHeight = 768.0f;
+	static const GLfloat DefaultSceneHeight = 120.0f;
 
 	/** 
 	 * This configuration sets the default width for windows.

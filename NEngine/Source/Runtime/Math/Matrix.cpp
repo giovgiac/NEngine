@@ -73,23 +73,21 @@ namespace Newton {
 
 		// First Column
 		Result.Elements[0 + 0 * 4] = U.X;
-		Result.Elements[1 + 0 * 4] = V.X;
-		Result.Elements[2 + 0 * 4] = W.X;
+		Result.Elements[1 + 0 * 4] = U.Y;
+		Result.Elements[2 + 0 * 4] = U.Z;
+		Result.Elements[3 + 0 * 4] = -U.Dot(Eye);
 
 		// Second Column
-		Result.Elements[0 + 1 * 4] = U.Y;
+		Result.Elements[0 + 1 * 4] = V.X;
 		Result.Elements[1 + 1 * 4] = V.Y;
-		Result.Elements[2 + 1 * 4] = W.Y;
+		Result.Elements[2 + 1 * 4] = V.Z;
+		Result.Elements[3 + 1 * 4] = -V.Dot(Eye);
 
 		// Third Column
-		Result.Elements[0 + 2 * 4] = U.Z;
-		Result.Elements[1 + 2 * 4] = V.Z;
+		Result.Elements[0 + 2 * 4] = W.X;
+		Result.Elements[1 + 2 * 4] = W.Y;
 		Result.Elements[2 + 2 * 4] = W.Z;
-
-		// Fourth Column
-		Result.Elements[0 + 3 * 4] = -U.X * Eye.X - U.Y * Eye.Y - U.Z * Eye.Z;
-		Result.Elements[1 + 3 * 4] = -V.X * Eye.X - V.Y * Eye.Y - V.Z * Eye.Z;
-		Result.Elements[2 + 3 * 4] = -W.X * Eye.X - W.Y * Eye.Y - W.Z * Eye.Z;
+		Result.Elements[3 + 2 * 4] = -W.Dot(Eye);
 
 		return Result;
 	}

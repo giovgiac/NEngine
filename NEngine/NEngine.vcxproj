@@ -284,6 +284,7 @@
     <ClCompile Include="Source\Runtime\Math\Math.cpp" />
     <ClCompile Include="Source\Runtime\Math\Matrix.cpp" />
     <ClCompile Include="Source\Runtime\Math\Vector.cpp" />
+    <ClCompile Include="Source\Runtime\Math\Vector3.cpp" />
     <ClCompile Include="Source\Runtime\Utils\File.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

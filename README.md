@@ -1,5 +1,5 @@
 # Newton Engine
-The Newton Engine is a 2-D Game Engine being developed for a project at Universidade Federal do Rio Grande (http://furg.br) by Giovgiac. This engine has the intention of creating a simple Space Invaders-like game, with basic graphics, audio and font rendering capabilities.
+The Newton Engine is a 2-D Game Engine being developed at Universidade Federal do Rio Grande (http://furg.br) by Giovgiac. The engine has basic graphics, audio and font rendering capabilities.
 
 ### Example Code
 The following snippet of code shows a Main.cpp that utilizes the NEngine for creating a simple scene where there's a player that can move around with the W, A, S and D keys. The scene also presents another GameObject which is stationary.

@@ -223,8 +223,12 @@
     <ClInclude Include="Source\Runtime\Core\Config.h" />
     <ClInclude Include="Source\Runtime\Core\Event.h" />
     <ClInclude Include="Source\Runtime\Core\Game.h" />
+    <ClInclude Include="Source\Runtime\Core\Object.h" />
     <ClInclude Include="Source\Runtime\Core\Player.h" />
     <ClInclude Include="Source\Runtime\Core\Timer.h" />
+    <ClInclude Include="Source\Runtime\Core\Types.h" />
+    <ClInclude Include="Source\Runtime\Graphics\Actor.h" />
+    <ClInclude Include="Source\Runtime\Graphics\ActorComponent.h" />
     <ClInclude Include="Source\Runtime\Graphics\Camera.h" />
     <ClInclude Include="Source\Runtime\Graphics\GameObject.h" />
     <ClInclude Include="Source\Runtime\Graphics\Renderer.h" />
@@ -237,6 +241,7 @@
     <ClInclude Include="Source\Runtime\Math\Color.h" />
     <ClInclude Include="Source\Runtime\Math\Math.h" />
     <ClInclude Include="Source\Runtime\Math\Matrix.h" />
+    <ClInclude Include="Source\Runtime\Math\Transform.h" />
     <ClInclude Include="Source\Runtime\Math\Vector.h" />
     <ClInclude Include="Source\Runtime\Math\Vector3.h" />
     <ClInclude Include="Source\Runtime\Math\Vector4.h" />
@@ -270,8 +275,10 @@
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Audio\Source.cpp" />
     <ClCompile Include="Source\Runtime\Core\Game.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Object.cpp" />
     <ClCompile Include="Source\Runtime\Core\Player.cpp" />
     <ClCompile Include="Source\Runtime\Core\Timer.cpp" />
+    <ClCompile Include="Source\Runtime\Graphics\Actor.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Camera.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\GameObject.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Renderer.cpp" />

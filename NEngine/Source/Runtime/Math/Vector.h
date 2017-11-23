@@ -62,6 +62,18 @@ namespace Newton {
 		NVector& Add(const NVector& InOther);
 
 		/**
+		 * NVector Divide
+		 *
+		 * This method divides a vector by a scalar.
+		 *
+		 * @param const GLfloat InScalar: The scalar to divide the vector by.
+		 *
+		 * @return NVector&: A reference to self.
+		 *
+		 */
+		NVector& Divide(const GLfloat InScalar);
+
+		/**
 		 * NVector Multiply
 		 *
 		 * This method multiplies a vector and a scalar.
@@ -87,8 +99,10 @@ namespace Newton {
 
 		NVector& operator+=(const NVector& InOther);
 		NVector& operator*=(const GLfloat InScalar);
+		NVector& operator/=(const GLfloat InScalar);
 
 		friend NVector operator+(NVector InLeft, const NVector& InRight);
 		friend NVector operator*(NVector InVector, const GLfloat InScalar);
+		friend NVector operator/(NVector InVector, const GLfloat InScalar);
 	};
 }

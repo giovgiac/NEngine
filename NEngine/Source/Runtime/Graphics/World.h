@@ -8,6 +8,7 @@
 #pragma once
 
 #include <Collections/Array.h>
+#include <Graphics/Actor.h>
 #include <Graphics/Renderer.h>
 #include <Graphics/Scene.h>
 
@@ -69,5 +70,11 @@ namespace Newton {
 		 *
 		 */
 		inline const NScene& GetScene() const { return Scene; }
+
+		template<typename T>
+		T* SpawnActor(NTransform Transform)
+		{
+			return nullptr;
+		}
 	};
 }

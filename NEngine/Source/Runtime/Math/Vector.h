@@ -73,6 +73,17 @@ namespace Newton {
 		 */
 		NVector& Multiply(const GLfloat InScalar);
 
+		/**
+		 * NVector Zero
+		 *
+		 * This method returns the zero vector.
+		 *
+		 * @return NVector: A copy of the zero vector.
+		 *
+		 */
+		inline static NVector Zero(void) { return NVector(0.0f); }
+
+		bool operator==(const NVector& InOther);
 
 		NVector& operator+=(const NVector& InOther);
 		NVector& operator*=(const GLfloat InScalar);

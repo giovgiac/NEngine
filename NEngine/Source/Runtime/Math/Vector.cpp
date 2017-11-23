@@ -34,6 +34,8 @@ namespace Newton {
 		return *this;
 	}
 
+	bool NVector::operator==(const NVector& InOther) { return (X == InOther.X) && (Y == InOther.Y); }
+
 	NVector& NVector::operator+=(const NVector& InOther) { return Add(InOther); }
 	NVector& NVector::operator*=(const GLfloat InScalar) { return Multiply(InScalar); }
 

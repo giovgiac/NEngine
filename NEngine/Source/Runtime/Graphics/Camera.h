@@ -84,7 +84,7 @@ namespace Newton {
 		 * @return NMatrix: The view matrix of the camera.
 		 *
 		 */
-		inline NMatrix GetView(void) const { return NMatrix::Identity(); }
+		inline NMatrix GetView(void) const { return NMatrix::LookAt(NVector3(0.0f, 0.0f, 5.0f), NVector3(0.0f, 0.0f, 0.0f), NVector3(0.0f, 1.0f, 0.0f)); }
 
 		/**
 		 * NCamera GetProjection

@@ -37,6 +37,7 @@ namespace Newton {
 		// Set Default View and Projection
 		NMatrix View = Camera.GetView();
 		NMatrix Projection = Camera.GetProjection();
+		//NMatrix Projection = NMatrix::Identity();
 
 		Shader.Bind();
 		for (GLuint i = 0; i < GameObjects.GetSize(); i++) {

@@ -86,6 +86,11 @@ namespace Newton {
 		static NMatrix Orthographic(GLfloat InLeft, GLfloat InRight, GLfloat InBottom, GLfloat InTop, GLfloat InNear, GLfloat InFar);
 
 		/**
+		 * NMatrix LookAt
+		 */
+		static NMatrix LookAt(NVector3 Eye, NVector3 Center, NVector3 Up);
+
+		/**
 		 * NMatrix Rotation
 		 *
 		 * This static method initializes a rotation matrix given the angle and axis of rotation.

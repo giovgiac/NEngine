@@ -59,6 +59,41 @@ namespace Newton {
 		return Result;
 	}
 
+	NMatrix NMatrix::LookAt(NVector3 Eye, NVector3 Center, NVector3 Up) {
+		NMatrix Result = NMatrix::Identity();
+
+		// Basic Vectors
+		NVector3 A = Eye - Center;
+		NVector3 B = Up;
+
+		// Obtain Matrix Vectors
+		NVector3 W = A / A.Length();
+		NVector3 U = NVector3::Cross(B, W) / NVector3::Cross(B, W).Length();
+		NVector3 V = NVector3::Cross(W, U);
+
+		// First Column
+		Result.Elements[0 + 0 * 4] = U.X;
+		Result.Elements[1 + 0 * 4] = V.X;
+		Result.Elements[2 + 0 * 4] = W.X;
+
+		// Second Column
+		Result.Elements[0 + 1 * 4] = U.Y;
+		Result.Elements[1 + 1 * 4] = V.Y;
+		Result.Elements[2 + 1 * 4] = W.Y;
+
+		// Third Column
+		Result.Elements[0 + 2 * 4] = U.Z;
+		Result.Elements[1 + 2 * 4] = V.Z;
+		Result.Elements[2 + 2 * 4] = W.Z;
+
+		// Fourth Column
+		Result.Elements[0 + 3 * 4] = -U.X * Eye.X - U.Y * Eye.Y - U.Z * Eye.Z;
+		Result.Elements[1 + 3 * 4] = -V.X * Eye.X - V.Y * Eye.Y - V.Z * Eye.Z;
+		Result.Elements[2 + 3 * 4] = -W.X * Eye.X - W.Y * Eye.Y - W.Z * Eye.Z;
+
+		return Result;
+	}
+
 	NMatrix NMatrix::Rotation(GLfloat InAngle, const NVector3& InAxis) {
 		NMatrix Result = NMatrix::Identity();
 		GLfloat Radian = ToRadians(InAngle);

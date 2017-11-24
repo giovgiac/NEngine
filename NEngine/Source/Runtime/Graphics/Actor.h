@@ -25,5 +25,21 @@ namespace Newton
 
 	protected:
 		inline class NWorld* GetWorld(void) const { return World; }
+
+	public:
+		template<typename T>
+		NArray<T*> GetComponentsByClass(void) const
+		{
+			NArray<T*> Result;
+
+			for (uint32 i = 0; i < Components.GetSize(); i++)
+			{
+				T* Component = Cast<T>(Components[i]);
+				if (Component)
+					Result.Append(Component);
+			}
+
+			return Result;
+		}
 	};
 }

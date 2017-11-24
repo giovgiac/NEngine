@@ -16,6 +16,7 @@ namespace Newton
 	class NActor : public NObject
 	{
 	private:
+		NArray<class NActorComponent*> Components;
 		NTransform Transform;
 		class NWorld* World;
 

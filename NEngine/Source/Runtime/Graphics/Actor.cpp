@@ -13,6 +13,7 @@ namespace Newton
 {
 	void NActor::ConstructObject(void)
 	{
+		// Test
 		GetWorld()->SpawnActor<NActor>(Transform);
 	}
 }

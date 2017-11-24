@@ -36,4 +36,9 @@ namespace Newton
 	{
 		return Transform;
 	}
+
+	void NSceneComponent::SetComponentTransform(NTransform InTransform)
+	{
+		Transform = InTransform;
+	}
 }

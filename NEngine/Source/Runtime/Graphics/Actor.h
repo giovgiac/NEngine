@@ -27,8 +27,10 @@ namespace Newton
 		inline class NWorld* GetWorld(void) const { return World; }
 
 	public:
+		NActor(void);
+
 		template<typename T>
-		NArray<T*> GetComponentsByClass(void) const
+		NArray<T*> GetComponentsByClass(void)
 		{
 			NArray<T*> Result;
 

@@ -7,18 +7,26 @@
 
 #pragma once
 
+#include <Core/Object.h>
 #include <Collections/Array.h>
 #include <Graphics/Scene.h>
 #include <Graphics/Shader.h>
 
 namespace Newton {
+	struct NRenderable
+	{
+		uint32 Array;
+		uint32 Buffer;
+		class NPrimitiveComponent* Component;
+	};
+
 	/**
 	 * NRenderer Class
 	 *
 	 * This class is responsible for rendering game scenes.
 	 *
 	 */
-	class NRenderer {
+	class NRenderer : public NObject {
 	private:
 		NShader Shader;
 		GLuint Color;
@@ -55,6 +63,8 @@ namespace Newton {
 		 *
 		 */
 		void Render(const NScene& InScene, const NArray<GLuint>& InArrays) const;
+
+		void Render(const NScene& InScene, const NArray<NRenderable>& InRenderables);
 
 		/**
 		 * NRenderer GetColorID
@@ -103,5 +113,7 @@ namespace Newton {
 		 *
 		 */
 		void SetupShader(void);
+
+		inline void ConstructObject(void) { }
 	};
 }

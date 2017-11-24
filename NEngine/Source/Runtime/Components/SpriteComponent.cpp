@@ -28,7 +28,7 @@ namespace Newton
 		Vertices[3] = { NVector( 1.0f,  1.0f), Color, NVector(1.0f, 1.0f) };
 	}
 
-	void NSpriteComponent::SetSprite(class NTexture* InSprite)
+	void NSpriteComponent::SetSprite(NTexture* InSprite)
 	{
 		Sprite = InSprite;
 
@@ -37,7 +37,7 @@ namespace Newton
 			float Width = Sprite->GetWidth();
 			float Height = Sprite->GetHeight();
 
-			Vertices = NArray<NVertex>(4);
+			//Vertices = NArray<NVertex>(4);
 			Vertices[0] = { NVector(-Width / 2.0f,  Height / 2.0f), Color, NVector(0.0f, 1.0f) };
 			Vertices[1] = { NVector(-Width / 2.0f, -Height / 2.0f), Color, NVector(0.0f, 0.0f) };
 			Vertices[2] = { NVector( Width / 2.0f, -Height / 2.0f), Color, NVector(1.0f, 0.0f) };

@@ -117,8 +117,8 @@ namespace Newton {
 
 	void NGame::Play(void) {
 		BeforePlay();
-		for (GLuint i = 0; i < World->GetScene().GetObjects().GetSize(); i++)
-			World->GetScene().GetObjects()[i]->Start();
+		//for (GLuint i = 0; i < World->GetScene().GetObjects().GetSize(); i++)
+		//	World->GetScene().GetObjects()[i]->Start();
 
 		// Reset Timer
 		Timer->Reset();
@@ -128,8 +128,8 @@ namespace Newton {
 			Window->UpdateViewport();
 			World->Draw();
 			Timer->Tick();
-			for (GLuint i = 0; i < World->GetScene().GetObjects().GetSize(); i++)
-				World->GetScene().GetObjects()[i]->Tick(Timer->GetDeltaTime());
+			//for (GLuint i = 0; i < World->GetScene().GetObjects().GetSize(); i++)
+			//	World->GetScene().GetObjects()[i]->Tick(Timer->GetDeltaTime());
 			Window->SwapBuffers();
 			Window->PollEvents();
 			FMOD_System_Update(FMODSystem);

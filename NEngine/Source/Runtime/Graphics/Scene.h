@@ -20,6 +20,7 @@ namespace Newton {
 	 */
 	class NScene {
 	private:
+		NArray<class NActor*> Actors;
 		NCamera Camera;
 		NArray<NGameObject*> GameObjects;
 		NVector Size;
@@ -52,6 +53,10 @@ namespace Newton {
 		 *
 		 */
 		inline void AddObject(NGameObject* InObject) { GameObjects.Append(InObject); }
+
+		inline void AddActor(class NActor* InActor) { Actors.Append(InActor); }
+
+		inline const NArray<class NActor*>& GetActors(void) const { return Actors; }
 
 		/**
 		 * NScene GetCamera

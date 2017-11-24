@@ -28,5 +28,7 @@ namespace Newton
 		NVector GetComponentScale(void) const;
 
 		NTransform GetComponentTransform(void) const;
+
+		void SetComponentTransform(NTransform InTransform);
 	};
 }

@@ -9,6 +9,16 @@
 
 namespace Newton
 {
+	void NActorComponent::Start(void)
+	{
+
+	}
+
+	void NActorComponent::Tick(float DeltaTime)
+	{
+
+	}
+
 	void NActorComponent::ConstructObject(void)
 	{
 		

@@ -9,6 +9,7 @@
 
 #include <Core/Object.h>
 #include <Collections/Array.h>
+#include <Components/ActorComponent.h>
 #include <Math/Transform.h>
 
 namespace Newton
@@ -16,7 +17,7 @@ namespace Newton
 	class NActor : public NObject
 	{
 	private:
-		NArray<class NActorComponent*> Components;
+		NArray<NActorComponent*> Components;
 		NTransform Transform;
 		class NWorld* World;
 
@@ -28,6 +29,10 @@ namespace Newton
 
 	public:
 		NActor(void);
+
+		virtual void Start(void);
+
+		virtual void Tick(float DeltaTime);
 
 		template<typename T>
 		NArray<T*> GetComponentsByClass(void)

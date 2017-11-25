@@ -27,6 +27,16 @@ namespace Newton
 		Components.Append(SpriteComponent);
 	}
 
+	void NActor::Start(void)
+	{
+
+	}
+
+	void NActor::Tick(float DeltaTime)
+	{
+
+	}
+
 	void NActor::ConstructObject(void)
 	{
 		

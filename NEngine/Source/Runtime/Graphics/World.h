@@ -64,6 +64,8 @@ namespace Newton {
 		 */
 		void UnloadScene(void);
 
+		inline const NArray<class NActor*>& GetActors() const { return Actors; }
+
 		/**
 		 * NWorld GetScene
 		 *

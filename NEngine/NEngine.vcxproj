@@ -218,6 +218,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Runtime\Actors\Character.h" />
+    <ClInclude Include="Source\Runtime\Actors\Pawn.h" />
     <ClInclude Include="Source\Runtime\Audio\Source.h" />
     <ClInclude Include="Source\Runtime\Collections\Array.h" />
     <ClInclude Include="Source\Runtime\Components\PrimitiveComponent.h" />
@@ -230,7 +232,7 @@
     <ClInclude Include="Source\Runtime\Core\Player.h" />
     <ClInclude Include="Source\Runtime\Core\Timer.h" />
     <ClInclude Include="Source\Runtime\Core\Types.h" />
-    <ClInclude Include="Source\Runtime\Graphics\Actor.h" />
+    <ClInclude Include="Source\Runtime\Actors\Actor.h" />
     <ClInclude Include="Source\Runtime\Components\ActorComponent.h" />
     <ClInclude Include="Source\Runtime\Graphics\Camera.h" />
     <ClInclude Include="Source\Runtime\Graphics\GameObject.h" />
@@ -276,6 +278,8 @@
     <Library Include="Binaries\ThirdParty\OpenGL\x64\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Runtime\Actors\Character.cpp" />
+    <ClCompile Include="Source\Runtime\Actors\Pawn.cpp" />
     <ClCompile Include="Source\Runtime\Audio\Source.cpp" />
     <ClCompile Include="Source\Runtime\Components\PrimitiveComponent.cpp" />
     <ClCompile Include="Source\Runtime\Components\SceneComponent.cpp" />
@@ -284,7 +288,7 @@
     <ClCompile Include="Source\Runtime\Core\Object.cpp" />
     <ClCompile Include="Source\Runtime\Core\Player.cpp" />
     <ClCompile Include="Source\Runtime\Core\Timer.cpp" />
-    <ClCompile Include="Source\Runtime\Graphics\Actor.cpp" />
+    <ClCompile Include="Source\Runtime\Actors\Actor.cpp" />
     <ClCompile Include="Source\Runtime\Components\ActorComponent.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\Camera.cpp" />
     <ClCompile Include="Source\Runtime\Graphics\GameObject.cpp" />
